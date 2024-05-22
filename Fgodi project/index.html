@@ -14,6 +14,8 @@
 		<link rel="stylesheet" href="assets/styles/style.css" />
 		<link rel="stylesheet" href="assets/styles/mobile.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 	</head>
 	<body>
@@ -31,15 +33,15 @@
 						<div class="logo">
 							<h2><span>F</span>oodi</h2>
 						</div>
-						<div class="nav-items">
+						<ul class="nav-items hidden">
 							<li><a class="active" href="">Home</a></li>
 							<li>
 								<a href="">Menu</a>
-								<img src="assets/images/dropdown.png" alt="" srcset="" />
+								<img src="assets/images/dropdown.png" alt="" />
 							</li>
 							<li>
 								<a href="">Services</a>
-								<img src="assets/images/dropdown.png" alt="" srcset="" />
+								<img src="assets/images/dropdown.png" alt="" />
 							</li>
 							<li><a href="">Offers</a></li>
 							<div class="nav-icons">
@@ -50,14 +52,14 @@
 								</div>
 								<div class="nav-btn">
 									<button class="hero-btn-nav">
-										<img src="assets/images/Vector (1).png" alt="" srcset="" />
+										<img src="assets/images/Vector (1).png" alt="" />
 										<span>Contact</span>
 									</button>
 								</div>
 							</div>
-						</div>
-						
+						</ul>
 					</nav>
+					<ion-icon id="openNav" class="openmenu" name="menu-outline"></ion-icon>
 				</div>
 				<div class="hero-section">
 					<div class="hero">
@@ -585,7 +587,24 @@
                         </div>
 					</div>
 				</footer>
+				<script>
+					const navBar = document.querySelector('.nav-items');
+					const btn =document.getElementById("openNav");
+					btn.addEventListener('click', function(event){
+					 
+					 if(navBar.classList.contains("hidden")){
+							 navBar.classList.remove("hidden");
+						 }else{
+							 navBar.classList.add("hidden")
+						 }
+					});
+				 
+					
+					 </script>
 			</body>
 		</html>
-	</body>
-</html>
+	
+	
+
+
+

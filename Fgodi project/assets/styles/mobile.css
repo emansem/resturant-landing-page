@@ -44,6 +44,10 @@
     .form-input{
        display: flex;
        flex-direction: column;
+       justify-content: center;
+    }
+    .form-image{
+        display: none;
     }
     .catagories-items{
         display: grid;
@@ -54,7 +58,10 @@
 
 @media(max-width:884px){
     .dishes-items{
-        grid-template-columns: 1fr;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
     }
     .grid-col{
       display: flex;
@@ -63,9 +70,7 @@
       justify-content: center;
       align-content: center;
     }
-    .chef-section{
-        
-    }
+    
     .grid-col-3{
         grid-template-columns: 1fr;
         align-content: center;
@@ -85,26 +90,90 @@
     display: flex;
     flex-direction: column;
 }
+@keyframes slideinleft {
+    0%{
+        transform: translatex(-50%);
+
+    }
+    100%{
+        transform: translatex(0);
+    }
+}
 .nav-items{
    position: absolute;
-   right: 0;
+   width: 50%;
    display: flex;
    flex-direction: column;
    align-items: center;
    bottom: 50%;
- 
+  top: 0;
    left: 0%;
    z-index: 100;
    position: fixed;
-   top: -1%;
+   
    background-color: black;
+   padding-top: 2rem;
+   height: 100vh;
+   animation: slideinleft  0.5s;
+  
   
 
    
 }
-.nav-items li{
-    margin-top: 1rem;
+.nav-items li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
+.hidden{
+    display: none;
+}
+.header{
+    position: relative;
+    max-width: 120rem;
+
+	margin-inline: auto;
+	padding-inline: 3.2rem;
+}
+.openmenu{
+   height: 4rem;
+   width: 4rem;
+   position: absolute;
+   top: 0%;
+   right: 0;
+   display: block;
+   cursor: pointer;
+   margin-top: 1.4rem;
+   margin-right: 0.5rem;
+   transition: all 0.4s;
+  
+}
+.openmenu:hover{
+    color:#5fe26c;
+}
+.dishes-item{
+    padding-inline: 0;
+    width: 70%;
+    
+}
+}
+
+@media(max-width: 600px){
+   .dishes-item{
+    width: 100%;
+   } 
+   
+   .grid-col-4{
+      grid-template-columns: repeat(2, 1fr);
+   } 
+   .form-input{
+    width: 100%;
+   }
+   .hero-left{
+    display: none;
+   }
+   
 }
 
 
